@@ -26,7 +26,7 @@ if ($cpu_cores -is [array]) {
 #获取CPU使用率百分比值。
 $cpu_counter = "\Processor(_Total)\% Processor Time"
 $cpu_usage = (Get-Counter -Counter $cpu_counter).CounterSamples[0].CookedValue
-#计算CPU繁忙度值
+#计算CPU繁忙度值 和任务管理器中查看的一样
 $cpu_busy = $cpu_usage / $cpu_cores
 $cpu_busy_percent = ($cpu_busy * 100).ToString("#.#")
 
